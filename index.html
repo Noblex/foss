@@ -1,0 +1,2674 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>habous</title>
+    <meta charset="utf-8" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.7.0/dist/cdn.min.js"
+    ></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="./ta-gallery.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="index.js"></script>
+  </head>
+  <body dir="rtl" class="m-0">
+    <!-- Top Menu -->
+    <div class="bg-blue-900 text-xs h-[40px]">
+      <div class="lg:container mx-auto">
+        <ul class="flex gap-x-5 text-white pt-2 font-bold">
+          <li><a href="#" target="_self"> الاقتراحات </a></li>
+          <li>
+            <a href="#" target="_self"> الإحصائيات </a>
+          </li>
+          <li>
+            <a href="#" target="_self"> مطبوعات على الخط </a>
+          </li>
+          <li><a href="#" target="_self"> الأخبار </a></li>
+          <li>
+            <a href="#" target="_blank"> المناظرات </a>
+          </li>
+          <li>
+            <a href="#" target="_self"> طلبات العروض </a>
+          </li>
+          <li><a href="#" target="_blank"> خريطة الموقع </a></li>
+          <li>
+            <a href="#" target="_self"> فضاء الإعلام </a>
+          </li>
+          <li><a href="#" target="_blank"> للاتصال بنا </a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Logo -->
+    <div class="grid grid-cols-1 bg-blue-50 h-[115px]">
+      <div class="container mx-auto">
+        <img
+          src="https://www.alqayyim.com/templates/velocity/images/s5_logo.png"
+          alt="pixelsuae"
+          class="w-[100] h-[100] pt-4"
+        />
+      </div>
+    </div>
+    <!-- Main Menu -->
+    <div
+      id="navbar"
+      class="
+        pt-1
+        mt-0
+        sticky
+        top-0
+        left-0
+        z-50
+        font-bold
+        dark:bg-gray-800
+        bg-gray-100
+        border border-b-blue-100 border-b-4
+      "
+      x-data="{isVisible: false,isFocused: false,mobileMenu:false}"
+    >
+      <div class="container py-3 px-4 mx-auto">
+        <div class="md:flex md:items-center md:justify-between">
+          <div class="flex justify-between items-center">
+            <!-- Mobile menu button -->
+            <div class="flex md:hidden">
+              <button
+                @click="mobileMenu = !mobileMenu"
+                type="button"
+                class="
+                  text-gray-500
+                  dark:text-gray-200
+                  hover:text-gray-600
+                  dark:hover:text-gray-400
+                  focus:outline-none focus:text-gray-600
+                  dark:focus:text-gray-400
+                "
+                aria-label="toggle menu"
+              >
+                <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="relative flex-grow">
+            <div
+              class="md:flex md:items-center md:justify-start sm:flex-row"
+              x-show="window.innerWidth > 426 ? true  : mobileMenu"
+            >
+              <!-- {{-- Menus --}} -->
+              <div
+                class="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8"
+              >
+                <a
+                  @click.prevent="isVisible = true"
+                  @click.away.prevent="isVisible = false"
+                  @mouseover="isVisible = true"
+                  @mouseout.debounce.200="!isFocused ? isVisible = false : 1"
+                  href="#"
+                  class="
+                    py-1
+                    px-2
+                    mx-2
+                    mt-2
+                    md:text-md
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    rounded-md
+                    transition-colors
+                    duration-200
+                    transform
+                    md:mt-0
+                    dark:text-gray-200
+                    hover:bg-gray-300
+                    dark:hover:bg-gray-700
+                  "
+                  >المؤسســة
+                </a>
+
+                <a
+                  href="#"
+                  class="
+                    py-1
+                    px-2
+                    mx-2
+                    mt-2
+                    md:text-md
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    rounded-md
+                    transition-colors
+                    duration-200
+                    transform
+                    md:mt-0
+                    dark:text-gray-200
+                    hover:bg-gray-300
+                    dark:hover:bg-gray-700
+                  "
+                >
+                  فضاء القيم
+                </a>
+
+                <a
+                  href="#"
+                  class="
+                    py-1
+                    px-2
+                    mx-2
+                    mt-2
+                    md:text-md
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    rounded-md
+                    transition-colors
+                    duration-200
+                    transform
+                    md:mt-0
+                    dark:text-gray-200
+                    hover:bg-gray-300
+                    dark:hover:bg-gray-700
+                  "
+                >
+                  برامـج٬ خدمـات وإعانــات
+                </a>
+
+                <a
+                  href="#"
+                  class="
+                    py-1
+                    px-2
+                    mx-2
+                    mt-2
+                    md:text-md
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    rounded-md
+                    transition-colors
+                    duration-200
+                    transform
+                    md:mt-0
+                    dark:text-gray-200
+                    hover:bg-gray-300
+                    dark:hover:bg-gray-700
+                  "
+                >
+                  صنائع المعروف
+                </a>
+
+                <a
+                  href="#"
+                  class="
+                    py-1
+                    px-2
+                    mx-2
+                    mt-2
+                    md:text-md
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    rounded-md
+                    transition-colors
+                    duration-200
+                    transform
+                    md:mt-0
+                    dark:text-gray-200
+                    hover:bg-gray-300
+                    dark:hover:bg-gray-700
+                  "
+                >
+                  الشركـــاء
+                </a>
+
+                <a
+                  href="#"
+                  class="
+                    py-1
+                    px-2
+                    mx-2
+                    mt-2
+                    md:text-md
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    rounded-md
+                    transition-colors
+                    duration-200
+                    transform
+                    md:mt-0
+                    dark:text-gray-200
+                    hover:bg-gray-300
+                    dark:hover:bg-gray-700
+                  "
+                >
+                  رواق
+                </a>
+
+                <a
+                  href="#"
+                  class="
+                    py-1
+                    px-2
+                    mx-2
+                    mt-2
+                    md:text-md
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    rounded-md
+                    transition-colors
+                    duration-200
+                    transform
+                    md:mt-0
+                    dark:text-gray-200
+                    hover:bg-gray-300
+                    dark:hover:bg-gray-700
+                  "
+                >
+                  اتصل بنـا
+                </a>
+              </div>
+              <!-- {{-- End Menus --}} -->
+            </div>
+
+            <!-- Mega Menu -->
+            <div
+              x-show.transition.in.duration.200ms.origin.top.right.opacity.10.scale.85.out.duration.300ms.origin.bottom.left.opacity.scale.100="isVisible"
+              @mouseover="isFocused = true"
+              @mouseleave="isFocused = isVisible = false"
+              class="
+                overflow-hidden
+                absolute
+                right-0
+                z-30
+                mt-4
+                w-auto
+                text-xs
+                font-normal
+                normal-case
+                bg-white
+                rounded-lg
+                border
+                shadow-md
+                mega-menu
+                lg:w-160 lg:z-10
+              "
+            >
+              <!-- {{-- head menu--}} -->
+              <div
+                class="
+                  grid
+                  md:grid-cols-3
+                  sm:grid-cols-1
+                  py-6
+                  px-8
+                  -mx-4
+                  text-blue-500
+                  border-b
+                "
+              >
+                <!-- {{-- First Column Menu--}} -->
+                <ul class="px-4 w-full">
+                  <li class="mb-8">
+                    <a href="#" class="flex group">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6 text-blue-500 stroke-current"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+                        />
+                      </svg>
+
+                      <span
+                        class="
+                          block
+                          flex
+                          items-center
+                          mx-3
+                          mt-1
+                          font-sans font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >الغرض من إنشاء المؤسسة</span
+                      >
+                    </a>
+                  </li>
+                  <li class="mb-8">
+                    <a href="#" class="flex group">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span
+                        class="
+                          block
+                          flex
+                          items-center
+                          mx-3
+                          mt-1
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >مالية المؤسســــــــــــــة</span
+                      >
+                    </a>
+                  </li>
+                  <li class="mb-8">
+                    <a href="#" class="flex group">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        />
+                      </svg>
+                      <span
+                        class="
+                          block
+                          flex
+                          items-center
+                          mx-3
+                          mt-1
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >المراقبة الماليـــــــــــــــة</span
+                      >
+                    </a>
+                  </li>
+                  <li class="mb-8 lg:mb-0">
+                    <a href="#" class="flex group">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
+                      </svg>
+                      <span
+                        class="
+                          block
+                          flex
+                          items-center
+                          mx-3
+                          mt-1
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >الموارد البشريــــــــــــة</span
+                      >
+                    </a>
+                  </li>
+                </ul>
+                <!-- {{-- Second Column Menu--}} -->
+                <ul class="px-4 w-full">
+                  <li class="mb-8">
+                    <a href="#" class="flex group">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        />
+                      </svg>
+                      <span
+                        class="
+                          block
+                          mx-3
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >الظهير الشريـــــف</span
+                      >
+                    </a>
+                  </li>
+                  <li class="mb-8">
+                    <a href="#" class="flex group">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <span
+                        class="
+                          block
+                          mx-3
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >النظـام الداخلــــــي</span
+                      >
+                    </a>
+                  </li>
+                  <li class="mb-8">
+                    <a href="#" class="flex group">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"
+                        />
+                      </svg>
+                      <span
+                        class="
+                          block
+                          mx-3
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >القرار المشتـــــــرك</span
+                      >
+                    </a>
+                  </li>
+                </ul>
+                <!-- {{-- Third Column Menu--}} -->
+                <ul class="px-4 w-full">
+                  <li class="mb-8">
+                    <a href="#" class="flex group">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                        />
+                      </svg>
+                      <span
+                        class="
+                          block
+                          mx-3
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >مجلس المؤسسة</span
+                      >
+                    </a>
+                  </li>
+                  <li class="mb-8">
+                    <a href="#" class="flex group">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+                        />
+                      </svg>
+                      <span
+                        class="
+                          block
+                          mx-3
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >الإدارة المركزية</span
+                      >
+                    </a>
+                  </li>
+                  <li class="mb-8">
+                    <a href="#" class="flex group">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                        />
+                      </svg>
+                      <span
+                        class="
+                          block
+                          mx-3
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >الوحدات الإدارية</span
+                      >
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- {{-- Buttom Menu --}} -->
+              <ul
+                class="
+                  grid
+                  md:grid-cols-3
+                  sm:grid-cols-1
+                  py-8
+                  px-8
+                  text-blue-500
+                  bg-gray-100
+                "
+              >
+                <li class="mb-6">
+                  <a href="#" class="flex lg:items-center group">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="ml-3 w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+                      />
+                    </svg>
+
+                    <span class="flex flex-col lg:flex-row lg:items-center">
+                      <span
+                        class="
+                          block
+                          ml-2
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >كلمة المؤسســـــــــة</span
+                      >
+                    </span>
+                  </a>
+                </li>
+                <li class="mb-6">
+                  <a href="#" class="flex lg:items-center group">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="ml-3 w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                      />
+                    </svg>
+
+                    <span class="flex flex-col lg:flex-row lg:items-center">
+                      <span
+                        class="
+                          block
+                          ml-2
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >دورات المجلـــــــس</span
+                      >
+                    </span>
+                  </a>
+                </li>
+                <li class="mb-6">
+                  <a href="#" class="flex lg:items-center group">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="ml-3 w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+
+                    <span class="flex flex-col lg:flex-row lg:items-center">
+                      <span
+                        class="
+                          block
+                          ml-2
+                          font-bold
+                          text-gray-800
+                          group-hover:text-gray-400
+                        "
+                        >أزمنة ومحطـــــــات</span
+                      >
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Slider-->
+    <div
+      class="
+        ta-gallery-element-active
+        ta-gallery-anim-right-in
+        ta-gallery-anim-right-out
+        ta-gallery-anim-left-in
+        ta-gallery-anim-left-out
+      "
+    ></div>
+    <div
+      class="mb-8 ta-gallery ta-gallery-size"
+      x-data="taGallery()"
+      data-min-height="32rem"
+      x-init="init({
+        origin: false,
+        duration: '1s',
+        timing: 'ease-in-out',
+        autoplay: true,
+        interval: 3000,
+        pauseonhover: true
+    })"
+      data-start="0"
+      data-timing="ease-in-out"
+      data-duration="0.8s"
+    >
+      <!--- START SLIDES /-->
+      <div class="ta-gallery-element ta-gallery-anim-snake" x-cloak>
+        <figure>
+          <img
+            src="https://picsum.photos/800/500?random=2"
+            alt="Example Image"
+            class="ta-gallery-image"
+            loading="lazy"
+            x-ref="height"
+          />
+          <figcaption
+            class="
+              hover:text-blue-100
+              select-none
+              cursor-pointer
+              py-5
+              px-48
+              lg:text-lg
+              text-sm
+              font-semibold
+              text-white
+              bg-gray-900 bg-opacity-25
+              ta-gallery-image-caption
+              bg-blur-2
+            "
+          >
+            موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم
+            ويتم وضع النصوص النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص
+            التجريبية بالتصميم قد تشغل المشاهد عن وضع الكثير من الملاحظات او
+            الانتقادات للتصميم الاساسي.
+          </figcaption>
+        </figure>
+      </div>
+      <div class="ta-gallery-element ta-gallery-anim-snake" x-cloak>
+        <figure>
+          <img
+            src="https://picsum.photos/800/500?random=1"
+            alt="Example Image"
+            class="ta-gallery-image"
+            loading="lazy"
+            x-ref="height"
+          />
+          <figcaption
+            class="
+              hover:text-blue-100
+              select-none
+              cursor-pointer
+              py-5
+              px-48
+              lg:text-lg
+              text-sm
+              font-semibold
+              text-white
+              bg-gray-900 bg-opacity-25
+              ta-gallery-image-caption
+              bg-blur-2
+            "
+          >
+            لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل
+            ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور
+            او فلاير على سبيل المثال ... او نماذج مواقع انترنت ...
+          </figcaption>
+        </figure>
+      </div>
+      <!--- END SLIDES /-->
+      <!--- START BUTTONS /-->
+      <button
+        type="button"
+        class="
+          block
+          flex
+          -left-5
+          justify-center
+          items-center
+          focus:outline-none
+          w-10
+          h-10
+          text-white
+          bg-black bg-opacity-75
+          rounded-full
+          border-2 border-white
+          shadow-xl
+          ta-gallery-button
+          sm:left-2
+          focus:ring focus:ring-primary
+        "
+        @click="previous()"
+      >
+        <svg
+          class="w-6 h-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 256 512"
+        >
+          <path
+            d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+          ></path>
+        </svg>
+      </button>
+      <button
+        type="button"
+        class="
+          flex
+          -right-5
+          focus:outline-none
+          justify-center
+          items-center
+          w-10
+          h-10
+          text-white
+          bg-black bg-opacity-75
+          rounded-full
+          border-2 border-white
+          shadow-xl
+          ta-gallery-button
+          sm:right-2
+          focus:ring focus:ring-primary
+        "
+        @click="next()"
+      >
+        <svg
+          class="w-6 h-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 256 512"
+        >
+          <path
+            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+          ></path>
+        </svg>
+      </button>
+      <!--- END BUTTONS /-->
+    </div>
+
+    <!-- Admin Words -->
+    <div dir="rtl" data-aos="fade-up" data-aos-duration="2000">
+      <section
+        class="bg-gray-100 dark:bg-gray-900 lg:py-12 lg:flex lg:justify-center"
+      >
+        <div
+          class="
+            bg-white
+            dark:bg-gray-800
+            lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg
+          "
+        >
+          <div class="lg:w-1/2">
+            <div class="h-64 bg-cover lg:rounded-lg lg:h-full">
+              <iframe
+                class="h-full w-full"
+                src="https://www.youtube.com/embed/wT_Q15TjQW0?controls=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
+            <h2
+              class="
+                text-2xl
+                font-bold
+                text-gray-800
+                dark:text-white
+                md:text-3xl
+              "
+            >
+              عشوائي لوريم ايبسوم
+              <span class="text-indigo-600 dark:text-indigo-400">بالعربي</span>
+            </h2>
+            <p class="mt-4 text-gray-600 dark:text-gray-400">
+              حشد الثقيل المنتصر ثم, أسر قررت تم. وغير تصفح الحزب واستمر, مشروط
+              الساحلية هذا ان. أما معركة لبلجيكا، من, الألوف الثقيلة الإنجليزية
+              أسر ٣٠. ٣٠ دار أمام أحدث, أما بحشد الهادي الدولارات ما, هو الحزب
+              الصفحة محاولات قبل. وبحلول الخنادق الأوروبية، ان غير, وليرتفع
+              برلين، انه, انتباه الوزراء البولندي تم تلك.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!--Features-->
+    <div dir="rtl">
+      <div
+        class="sm:flex flex-wrap justify-center items-center text-center gap-8"
+      >
+        <div
+          x-data="{ show: false }"
+          @mouseover="show = true"
+          @mouseleave.debounce="show = false"
+          :class="{ 'animate__bounceIn': show }"
+          data-aos="zoom-in-left"
+          data-aos-duration="1500"
+          class="
+            cursor-pointer
+            w-full
+            sm:w-1/2
+            md:w-1/2
+            lg:w-1/4
+            px-4
+            py-4
+            bg-white
+            mt-6
+            shadow-lg
+            rounded-lg
+            dark:bg-gray-800
+          "
+        >
+          <div class="flex-shrink-0">
+            <div
+              class="
+                flex
+                items-center
+                mx-auto
+                justify-center
+                h-12
+                w-12
+                rounded-md
+                bg-indigo-500
+                text-white
+              "
+            >
+              <svg
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="h-6 w-6"
+                viewBox="0 0 1792 1792"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M491 1536l91-91-235-235-91 91v107h128v128h107zm523-928q0-22-22-22-10 0-17 7l-542 542q-7 7-7 17 0 22 22 22 10 0 17-7l542-542q7-7 7-17zm-54-192l416 416-832 832h-416v-416zm683 96q0 53-37 90l-166 166-416-416 166-165q36-38 90-38 53 0 91 38l235 234q37 39 37 91z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <h3
+            class="
+              text-2xl
+              sm:text-xl
+              text-gray-700
+              font-semibold
+              dark:text-white
+              py-4
+            "
+          >
+            البرامــج والإعانــــات
+          </h3>
+          <p class="text-md text-gray-500 dark:text-gray-300 py-4">
+            كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
+            أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا
+          </p>
+        </div>
+        <div
+          x-data="{ show: false }"
+          @mouseover="show = true"
+          @mouseleave.debounce="show = false"
+          :class="{ 'animate__bounceIn': show }"
+          data-aos="zoom-in-up"
+          data-aos-duration="1000"
+          class="
+            cursor-pointer
+            w-full
+            sm:w-1/2
+            md:w-1/2
+            lg:w-1/4
+            px-4
+            py-4
+            mt-6
+            sm:mt-16
+            md:mt-20
+            lg:mt-24
+            bg-white
+            shadow-lg
+            rounded-lg
+            dark:bg-gray-800
+          "
+        >
+          <div class="flex-shrink-0">
+            <div
+              class="
+                flex
+                items-center
+                mx-auto
+                justify-center
+                h-12
+                w-12
+                rounded-md
+                bg-indigo-500
+                text-white
+              "
+            >
+              <svg
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="h-6 w-6"
+                viewBox="0 0 1792 1792"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M491 1536l91-91-235-235-91 91v107h128v128h107zm523-928q0-22-22-22-10 0-17 7l-542 542q-7 7-7 17 0 22 22 22 10 0 17-7l542-542q7-7 7-17zm-54-192l416 416-832 832h-416v-416zm683 96q0 53-37 90l-166 166-416-416 166-165q36-38 90-38 53 0 91 38l235 234q37 39 37 91z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <h3
+            class="
+              text-2xl
+              sm:text-xl
+              text-gray-700
+              font-semibold
+              dark:text-white
+              py-4
+            "
+          >
+            الانخـــراط
+          </h3>
+          <p class="text-md text-gray-500 dark:text-gray-300 py-4">
+            قصف المسرح واستمر الإتحاد في, ذات أسيا للغزو، الخطّة و, الآخر
+            لألمانيا جهة بل. في سحقت هيروشيما البريطاني
+          </p>
+        </div>
+        <div
+          x-data="{ show: false }"
+          @mouseover="show = true"
+          @mouseleave.debounce="show = false"
+          :class="{ 'animate__bounceIn': show }"
+          data-aos="zoom-in-right"
+          data-aos-duration="1500"
+          class="
+            cursor-pointer
+            w-full
+            sm:w-1/2
+            md:w-1/2
+            lg:w-1/4
+            mt-6
+            px-4
+            py-4
+            bg-white
+            shadow-lg
+            rounded-lg
+            dark:bg-gray-800
+          "
+        >
+          <div class="flex-shrink-0">
+            <div
+              class="
+                flex
+                items-center
+                mx-auto
+                justify-center
+                h-12
+                w-12
+                rounded-md
+                bg-indigo-500
+                text-white
+              "
+            >
+              <svg
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="h-6 w-6"
+                viewBox="0 0 1792 1792"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M491 1536l91-91-235-235-91 91v107h128v128h107zm523-928q0-22-22-22-10 0-17 7l-542 542q-7 7-7 17 0 22 22 22 10 0 17-7l542-542q7-7 7-17zm-54-192l416 416-832 832h-416v-416zm683 96q0 53-37 90l-166 166-416-416 166-165q36-38 90-38 53 0 91 38l235 234q37 39 37 91z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <h3
+            class="
+              text-2xl
+              sm:text-xl
+              text-gray-700
+              font-semibold
+              dark:text-white
+              py-4
+            "
+          >
+            الخدمــــــات
+          </h3>
+          <p class="text-md text-gray-500 dark:text-gray-300 py-4">
+            ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ
+            العام 45 قبل الميلاد
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--News 1-->
+    <div>
+      <div
+        class="
+          px-4
+          mt-10
+          mx-auto
+          sm:max-w-xl
+          md:max-w-full
+          lg:max-w-screen-xl
+          md:px-24
+          lg:px-8 lg:py-5
+        "
+      >
+        <div class="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-4">
+          <h2
+            class="
+              max-w-lg
+              mb-5
+              font-sans
+              text-3xl
+              font-bold
+              tracking-tight
+              text-gray-900
+              sm:text-4xl sm:leading-none
+              md:mb-6
+              group
+            "
+          >
+            <span class="inline-block mb-1 sm:mb-4"> مذكرة المؤسسة </span>
+            <div
+              class="
+                h-1
+                ml-auto
+                duration-300
+                origin-left
+                transform
+                bg-deep-purple-accent-400
+                scale-x-30
+                group-hover:scale-x-100
+              "
+            ></div>
+          </h2>
+        </div>
+        <div
+          data-aos="flip-up"
+          data-aos-duration="1500"
+          class="
+            grid
+            gap-6
+            row-gap-5
+            mb-8
+            lg:grid-cols-4
+            sm:row-gap-6 sm:grid-cols-2
+          "
+        >
+          <a href="/" aria-label="View Item">
+            <div
+              x-data="{ show: false }"
+              @mouseover.debounce="show = true"
+              @mouseleave.debounce.2000ms="show = false"
+              :class="{ 'animate__flipInY': show }"
+              class="
+                animate__animated animate__slow
+                relative
+                overflow-hidden
+                rounded
+                shadow-lg
+              "
+            >
+              <img
+                class="object-cover w-full h-56 md:h-64 xl:h-80"
+                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                alt=""
+              />
+              <div
+                class="
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  px-6
+                  py-4
+                  bg-black bg-opacity-75
+                "
+              >
+                <p class="text-sm font-medium tracking-wide text-white">
+                  Sed ut perspiciatis unde omnis iste natus error
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="/" aria-label="View Item">
+            <div
+              x-data="{ show: false }"
+              @mouseover.debounce="show = true"
+              @mouseleave.debounce.2000ms="show = false"
+              :class="{ 'animate__flipInY': show }"
+              class="
+                animate__animated animate__slow
+                relative
+                overflow-hidden
+                rounded
+                shadow-lg
+              "
+            >
+              <img
+                class="object-cover w-full h-56 md:h-64 xl:h-80"
+                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                alt=""
+              />
+              <div
+                class="
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  px-6
+                  py-4
+                  bg-black bg-opacity-75
+                "
+              >
+                <p class="text-sm font-medium tracking-wide text-white">
+                  Sed ut perspiciatis unde omnis iste natus error
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="/" aria-label="View Item">
+            <div
+              x-data="{ show: false }"
+              @mouseover.debounce="show = true"
+              @mouseleave.debounce.2000ms="show = false"
+              :class="{ 'animate__flipInY': show }"
+              class="
+                animate__animated animate__slow
+                relative
+                overflow-hidden
+                rounded
+                shadow-lg
+              "
+            >
+              <img
+                class="object-cover w-full h-56 md:h-64 xl:h-80"
+                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                alt=""
+              />
+              <div
+                class="
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  px-6
+                  py-4
+                  bg-black bg-opacity-75
+                "
+              >
+                <p class="text-sm font-medium tracking-wide text-white">
+                  Sed ut perspiciatis unde omnis iste natus error
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="/" aria-label="View Item">
+            <div
+              x-data="{ show: false }"
+              @mouseover.debounce="show = true"
+              @mouseleave.debounce.2000ms="show = false"
+              :class="{ 'animate__flipInY': show }"
+              class="
+                animate__animated animate__slow
+                relative
+                overflow-hidden
+                rounded
+                shadow-lg
+              "
+            >
+              <img
+                class="object-cover w-full h-56 md:h-64 xl:h-80"
+                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                alt=""
+              />
+              <div
+                class="
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  px-6
+                  py-4
+                  bg-black bg-opacity-75
+                "
+              >
+                <p class="text-sm font-medium tracking-wide text-white">
+                  Sed ut perspiciatis unde omnis iste natus error
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="text-center">
+          <a
+            href="/"
+            aria-label=""
+            class="
+              inline-flex
+              items-center
+              font-semibold
+              transition-colors
+              duration-200
+              text-deep-purple-accent-400
+              hover:text-deep-purple-800
+            "
+          >
+            <svg
+              class="inline-block w-3 ml-2"
+              fill="currentColor"
+              viewBox="0 0 12 12"
+            >
+              <path
+                d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"
+              ></path>
+            </svg>
+            شاهد المزيد
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--News 2-->
+    <div>
+      <div
+        class="
+          px-4
+          mt-10
+          mx-auto
+          sm:max-w-xl
+          md:max-w-full
+          lg:max-w-screen-xl
+          md:px-24
+          lg:px-8 lg:py-5
+        "
+      >
+        <div class="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-4">
+          <h2
+            class="
+              max-w-lg
+              mb-5
+              font-sans
+              text-3xl
+              font-bold
+              tracking-tight
+              text-gray-900
+              sm:text-4xl sm:leading-none
+              md:mb-6
+              group
+            "
+          >
+            <span class="inline-block mb-1 sm:mb-4"> أنشطــة المؤسســــة </span>
+            <div
+              class="
+                h-1
+                ml-auto
+                duration-300
+                origin-left
+                transform
+                bg-deep-purple-accent-400
+                scale-x-30
+                group-hover:scale-x-100
+              "
+            ></div>
+          </h2>
+        </div>
+        <div
+          data-aos="flip-up"
+          data-aos-duration="1500"
+          class="
+            grid
+            gap-6
+            row-gap-5
+            mb-8
+            lg:grid-cols-4
+            sm:row-gap-6 sm:grid-cols-2
+          "
+        >
+          <a href="/" aria-label="View Item">
+            <div
+              x-data="{ show: false }"
+              @mouseover.debounce="show = true"
+              @mouseleave.debounce.2000ms="show = false"
+              :class="{ 'animate__heartBeat': show }"
+              class="
+                animate__animated animate__slow
+                relative
+                overflow-hidden
+                rounded
+                shadow-lg
+              "
+            >
+              <img
+                class="object-cover w-full h-56 md:h-64 xl:h-80"
+                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                alt=""
+              />
+              <div
+                class="
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  px-6
+                  py-4
+                  bg-black bg-opacity-75
+                "
+              >
+                <p class="text-sm font-medium tracking-wide text-white">
+                  Sed ut perspiciatis unde omnis iste natus error
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="/" aria-label="View Item">
+            <div
+              x-data="{ show: false }"
+              @mouseover.debounce="show = true"
+              @mouseleave.debounce.2000ms="show = false"
+              :class="{ 'animate__heartBeat': show }"
+              class="
+                animate__animated animate__slow
+                relative
+                overflow-hidden
+                rounded
+                shadow-lg
+              "
+            >
+              <img
+                class="object-cover w-full h-56 md:h-64 xl:h-80"
+                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                alt=""
+              />
+              <div
+                class="
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  px-6
+                  py-4
+                  bg-black bg-opacity-75
+                "
+              >
+                <p class="text-sm font-medium tracking-wide text-white">
+                  Sed ut perspiciatis unde omnis iste natus error
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="/" aria-label="View Item">
+            <div
+              x-data="{ show: false }"
+              @mouseover.debounce="show = true"
+              @mouseleave.debounce.2000ms="show = false"
+              :class="{ 'animate__heartBeat': show }"
+              class="
+                animate__animated animate__slow
+                relative
+                overflow-hidden
+                rounded
+                shadow-lg
+              "
+            >
+              <img
+                class="object-cover w-full h-56 md:h-64 xl:h-80"
+                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                alt=""
+              />
+              <div
+                class="
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  px-6
+                  py-4
+                  bg-black bg-opacity-75
+                "
+              >
+                <p class="text-sm font-medium tracking-wide text-white">
+                  Sed ut perspiciatis unde omnis iste natus error
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="/" aria-label="View Item">
+            <div
+              x-data="{ show: false }"
+              @mouseover.debounce="show = true"
+              @mouseleave.debounce.2000ms="show = false"
+              :class="{ 'animate__heartBeat': show }"
+              class="
+                animate__animated animate__slow
+                relative
+                overflow-hidden
+                rounded
+                shadow-lg
+              "
+            >
+              <img
+                class="object-cover w-full h-56 md:h-64 xl:h-80"
+                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                alt=""
+              />
+              <div
+                class="
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  px-6
+                  py-4
+                  bg-black bg-opacity-75
+                "
+              >
+                <p class="text-sm font-medium tracking-wide text-white">
+                  Sed ut perspiciatis unde omnis iste natus error
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="text-center">
+          <a
+            href="/"
+            aria-label=""
+            class="
+              inline-flex
+              items-center
+              font-semibold
+              transition-colors
+              duration-200
+              text-deep-purple-accent-400
+              hover:text-deep-purple-800
+            "
+          >
+            <svg
+              class="inline-block w-3 ml-2"
+              fill="currentColor"
+              viewBox="0 0 12 12"
+            >
+              <path
+                d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"
+              ></path>
+            </svg>
+            شاهد المزيد
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--Services-->
+    <div>
+      <div
+        class="
+          relative
+          px-4
+          py-16
+          mx-auto
+          sm:max-w-xl
+          md:max-w-full
+          lg:max-w-screen-xl
+          md:px-24
+          lg:px-8 lg:py-20
+        "
+      >
+        <div
+          class="
+            absolute
+            inset-x-0
+            top-0
+            items-center
+            justify-center
+            hidden
+            overflow-hidden
+            md:flex md:inset-y-0
+          "
+        >
+          <svg
+            viewBox="0 0 88 88"
+            class="w-full max-w-screen-xl text-indigo-100"
+          >
+            <circle fill="currentColor" cx="44" cy="44" r="15.5"></circle>
+            <circle
+              fill-opacity="0.2"
+              fill="currentColor"
+              cx="44"
+              cy="44"
+              r="44"
+            ></circle>
+            <circle
+              fill-opacity="0.2"
+              fill="currentColor"
+              cx="44"
+              cy="44"
+              r="37.5"
+            ></circle>
+            <circle
+              fill-opacity="0.3"
+              fill="currentColor"
+              cx="44"
+              cy="44"
+              r="29.5"
+            ></circle>
+            <circle
+              fill-opacity="0.3"
+              fill="currentColor"
+              cx="44"
+              cy="44"
+              r="22.5"
+            ></circle>
+          </svg>
+        </div>
+        <div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            class="
+              flex flex-col
+              justify-between
+              overflow-hidden
+              text-left
+              transition-shadow
+              duration-200
+              bg-white
+              rounded
+              shadow-xl
+              group
+              hover:shadow-2xl
+            "
+          >
+            <div
+              x-data="{ show: false }"
+              @mouseover="show = true"
+              @mouseleave.debounce="show = false"
+              :class="{ 'animate__jello': show }"
+              class="p-5 animate__animated"
+            >
+              <div
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  w-10
+                  h-10
+                  mb-4
+                  rounded-full
+                  bg-indigo-50
+                "
+              >
+                <svg
+                  class="w-8 h-8 text-deep-purple-accent-400"
+                  stroke="currentColor"
+                  viewBox="0 0 52 52"
+                >
+                  <polygon
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="none"
+                    points="29 13 14 29 25 29 23 39 38 23 27 23"
+                  ></polygon>
+                </svg>
+              </div>
+              <p class="mb-2 font-bold text-right">Bowling Sports</p>
+              <p class="text-sm leading-5 text-gray-900 text-right">
+                Disrupt inspire and think tank, social entrepreneur but
+                preliminary thinking think tank compelling.
+              </p>
+            </div>
+            <div
+              class="
+                w-full
+                h-1
+                ml-auto
+                duration-300
+                origin-left
+                transform
+                scale-x-0
+                bg-deep-purple-accent-400
+                group-hover:scale-x-100
+              "
+            ></div>
+          </div>
+          <div
+            class="
+              flex flex-col
+              justify-between
+              overflow-hidden
+              text-left
+              transition-shadow
+              duration-200
+              bg-white
+              rounded
+              shadow-xl
+              group
+              hover:shadow-2xl
+            "
+          >
+            <div
+              x-data="{ show: false }"
+              @mouseover="show = true"
+              @mouseleave.debounce="show = false"
+              :class="{ 'animate__jello': show }"
+              class="p-5 animate__animated"
+            >
+              <div
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  w-10
+                  h-10
+                  mb-4
+                  rounded-full
+                  bg-indigo-50
+                "
+              >
+                <svg
+                  class="w-8 h-8 text-deep-purple-accent-400"
+                  stroke="currentColor"
+                  viewBox="0 0 52 52"
+                >
+                  <polygon
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="none"
+                    points="29 13 14 29 25 29 23 39 38 23 27 23"
+                  ></polygon>
+                </svg>
+              </div>
+              <p class="mb-2 font-bold text-right">Bowling Sports</p>
+              <p class="text-sm leading-5 text-gray-900 text-right">
+                Disrupt inspire and think tank, social entrepreneur but
+                preliminary thinking think tank compelling.
+              </p>
+            </div>
+            <div
+              class="
+                w-full
+                h-1
+                ml-auto
+                duration-300
+                origin-left
+                transform
+                scale-x-0
+                bg-deep-purple-accent-400
+                group-hover:scale-x-100
+              "
+            ></div>
+          </div>
+          <div
+            class="
+              flex flex-col
+              justify-between
+              overflow-hidden
+              text-left
+              transition-shadow
+              duration-200
+              bg-white
+              rounded
+              shadow-xl
+              group
+              hover:shadow-2xl
+            "
+          >
+            <div
+              x-data="{ show: false }"
+              @mouseover="show = true"
+              @mouseleave.debounce="show = false"
+              :class="{ 'animate__jello': show }"
+              class="p-5 animate__animated"
+            >
+              <div
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  w-10
+                  h-10
+                  mb-4
+                  rounded-full
+                  bg-indigo-50
+                "
+              >
+                <svg
+                  class="w-8 h-8 text-deep-purple-accent-400"
+                  stroke="currentColor"
+                  viewBox="0 0 52 52"
+                >
+                  <polygon
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="none"
+                    points="29 13 14 29 25 29 23 39 38 23 27 23"
+                  ></polygon>
+                </svg>
+              </div>
+              <p class="mb-2 font-bold text-right">Bowling Sports</p>
+              <p class="text-sm leading-5 text-gray-900 text-right">
+                Disrupt inspire and think tank, social entrepreneur but
+                preliminary thinking think tank compelling.
+              </p>
+            </div>
+            <div
+              class="
+                w-full
+                h-1
+                ml-auto
+                duration-300
+                origin-left
+                transform
+                scale-x-0
+                bg-deep-purple-accent-400
+                group-hover:scale-x-100
+              "
+            ></div>
+          </div>
+          <div
+            class="
+              flex flex-col
+              justify-between
+              overflow-hidden
+              text-left
+              transition-shadow
+              duration-200
+              bg-white
+              rounded
+              shadow-xl
+              group
+              hover:shadow-2xl
+            "
+          >
+            <div
+              x-data="{ show: false }"
+              @mouseover="show = true"
+              @mouseleave.debounce="show = false"
+              :class="{ 'animate__jello': show }"
+              class="p-5 animate__animated"
+            >
+              <div
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  w-10
+                  h-10
+                  mb-4
+                  rounded-full
+                  bg-indigo-50
+                "
+              >
+                <svg
+                  class="w-8 h-8 text-deep-purple-accent-400"
+                  stroke="currentColor"
+                  viewBox="0 0 52 52"
+                >
+                  <polygon
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="none"
+                    points="29 13 14 29 25 29 23 39 38 23 27 23"
+                  ></polygon>
+                </svg>
+              </div>
+              <p class="mb-2 font-bold text-right">Bowling Sports</p>
+              <p class="text-sm leading-5 text-gray-900 text-right">
+                Disrupt inspire and think tank, social entrepreneur but
+                preliminary thinking think tank compelling.
+              </p>
+            </div>
+            <div
+              class="
+                w-full
+                h-1
+                ml-auto
+                duration-300
+                origin-left
+                transform
+                scale-x-0
+                bg-deep-purple-accent-400
+                group-hover:scale-x-100
+              "
+            ></div>
+          </div>
+          <div
+            class="
+              flex flex-col
+              justify-between
+              overflow-hidden
+              text-left
+              transition-shadow
+              duration-200
+              bg-white
+              rounded
+              shadow-xl
+              group
+              hover:shadow-2xl
+            "
+          >
+            <div
+              x-data="{ show: false }"
+              @mouseover="show = true"
+              @mouseleave.debounce="show = false"
+              :class="{ 'animate__jello': show }"
+              class="p-5 animate__animated"
+            >
+              <div
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  w-10
+                  h-10
+                  mb-4
+                  rounded-full
+                  bg-indigo-50
+                "
+              >
+                <svg
+                  class="w-8 h-8 text-deep-purple-accent-400"
+                  stroke="currentColor"
+                  viewBox="0 0 52 52"
+                >
+                  <polygon
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="none"
+                    points="29 13 14 29 25 29 23 39 38 23 27 23"
+                  ></polygon>
+                </svg>
+              </div>
+              <p class="mb-2 font-bold text-right">Bowling Sports</p>
+              <p class="text-sm leading-5 text-gray-900 text-right">
+                Disrupt inspire and think tank, social entrepreneur but
+                preliminary thinking think tank compelling.
+              </p>
+            </div>
+            <div
+              class="
+                w-full
+                h-1
+                ml-auto
+                duration-300
+                origin-left
+                transform
+                scale-x-0
+                bg-deep-purple-accent-400
+                group-hover:scale-x-100
+              "
+            ></div>
+          </div>
+          <div
+            class="
+              flex flex-col
+              justify-between
+              overflow-hidden
+              text-left
+              transition-shadow
+              duration-200
+              bg-white
+              rounded
+              shadow-xl
+              group
+              hover:shadow-2xl
+            "
+          >
+            <div
+              x-data="{ show: false }"
+              @mouseover="show = true"
+              @mouseleave.debounce="show = false"
+              :class="{ 'animate__jello': show }"
+              class="p-5 animate__animated"
+            >
+              <div
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  w-10
+                  h-10
+                  mb-4
+                  rounded-full
+                  bg-indigo-50
+                "
+              >
+                <svg
+                  class="w-8 h-8 text-deep-purple-accent-400"
+                  stroke="currentColor"
+                  viewBox="0 0 52 52"
+                >
+                  <polygon
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="none"
+                    points="29 13 14 29 25 29 23 39 38 23 27 23"
+                  ></polygon>
+                </svg>
+              </div>
+              <p class="mb-2 font-bold text-right">Bowling Sports</p>
+              <p class="text-sm leading-5 text-gray-900 text-right">
+                Disrupt inspire and think tank, social entrepreneur but
+                preliminary thinking think tank compelling.
+              </p>
+            </div>
+            <div
+              class="
+                w-full
+                h-1
+                ml-auto
+                duration-300
+                origin-left
+                transform
+                scale-x-0
+                bg-deep-purple-accent-400
+                group-hover:scale-x-100
+              "
+            ></div>
+          </div>
+          <div
+            class="
+              flex flex-col
+              justify-between
+              overflow-hidden
+              text-left
+              transition-shadow
+              duration-200
+              bg-white
+              rounded
+              shadow-xl
+              group
+              hover:shadow-2xl
+            "
+          >
+            <div
+              x-data="{ show: false }"
+              @mouseover="show = true"
+              @mouseleave.debounce="show = false"
+              :class="{ 'animate__jello': show }"
+              class="p-5 animate__animated"
+            >
+              <div
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  w-10
+                  h-10
+                  mb-4
+                  rounded-full
+                  bg-indigo-50
+                "
+              >
+                <svg
+                  class="w-8 h-8 text-deep-purple-accent-400"
+                  stroke="currentColor"
+                  viewBox="0 0 52 52"
+                >
+                  <polygon
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="none"
+                    points="29 13 14 29 25 29 23 39 38 23 27 23"
+                  ></polygon>
+                </svg>
+              </div>
+              <p class="mb-2 font-bold text-right">Bowling Sports</p>
+              <p class="text-sm leading-5 text-gray-900 text-right">
+                Disrupt inspire and think tank, social entrepreneur but
+                preliminary thinking think tank compelling.
+              </p>
+            </div>
+            <div
+              class="
+                w-full
+                h-1
+                ml-auto
+                duration-300
+                origin-left
+                transform
+                scale-x-0
+                bg-deep-purple-accent-400
+                group-hover:scale-x-100
+              "
+            ></div>
+          </div>
+          <div
+            class="
+              flex flex-col
+              justify-between
+              overflow-hidden
+              text-left
+              transition-shadow
+              duration-200
+              bg-white
+              rounded
+              shadow-xl
+              group
+              hover:shadow-2xl
+            "
+          >
+            <div
+              x-data="{ show: false }"
+              @mouseover="show = true"
+              @mouseleave.debounce="show = false"
+              :class="{ 'animate__jello': show }"
+              class="p-5 animate__animated"
+            >
+              <div
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  w-10
+                  h-10
+                  mb-4
+                  rounded-full
+                  bg-indigo-50
+                "
+              >
+                <svg
+                  class="w-8 h-8 text-deep-purple-accent-400"
+                  stroke="currentColor"
+                  viewBox="0 0 52 52"
+                >
+                  <polygon
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="none"
+                    points="29 13 14 29 25 29 23 39 38 23 27 23"
+                  ></polygon>
+                </svg>
+              </div>
+              <p class="mb-2 font-bold text-right">Bowling Sports</p>
+              <p class="text-sm leading-5 text-gray-900 text-right">
+                Disrupt inspire and think tank, social entrepreneur but
+                preliminary thinking think tank compelling.
+              </p>
+            </div>
+            <div
+              class="
+                w-full
+                h-1
+                ml-auto
+                duration-300
+                origin-left
+                transform
+                scale-x-0
+                bg-deep-purple-accent-400
+                group-hover:scale-x-100
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partners -->
+    <div>
+      <div class="p-8 bg-white dark:bg-gray-800 rounded-lg shadow">
+        <p class="text-center text-3xl font-bold text-gray-800 dark:text-white">
+          روابط مهمة
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div
+            x-data="{ show: false }"
+            @mouseover="show = true"
+            @mouseleave.debounce="show = false"
+            :class="{ 'animate__bounceIn': show }"
+            class="
+              animate__animated
+              cursor-pointer
+              select-none
+              p-4
+              transition
+              transform
+              rounded
+              drop-shadow-sm
+            "
+          >
+            <div class="flex-col flex justify-center items-center">
+              <div class="flex-shrink-0">
+                <a href="#" class="block relative">
+                  <img
+                    alt="profil"
+                    src="https://www.aviationcivile.gov.ma/pdf/logorm.png"
+                    class="mx-auto object-cover rounded-full h-20 w-20"
+                  />
+                </a>
+              </div>
+              <div class="mt-2 text-center flex flex-col">
+                <span class="text-gray-600 dark:text-white text-lg font-medium">
+                  وزارة الأوقاف والشؤون الإسلامية
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            x-data="{ show: false }"
+            @mouseover="show = true"
+            @mouseleave.debounce="show = false"
+            :class="{ 'animate__bounceIn': show }"
+            class="
+              animate__animated
+              cursor-pointer
+              select-none
+              p-4
+              transition
+              transform
+              rounded
+              drop-shadow-sm
+            "
+          >
+            <div class="flex-col flex justify-center items-center">
+              <div class="flex-shrink-0">
+                <a href="#" class="block relative">
+                  <img
+                    alt="profil"
+                    src="https://www.aviationcivile.gov.ma/pdf/logorm.png"
+                    class="mx-auto object-cover rounded-full h-20 w-20"
+                  />
+                </a>
+              </div>
+              <div class="mt-2 text-center flex flex-col">
+                <span class="text-gray-600 dark:text-white text-lg font-medium">
+                  وزارة الأوقاف والشؤون الإسلامية
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            x-data="{ show: false }"
+            @mouseover="show = true"
+            @mouseleave.debounce="show = false"
+            :class="{ 'animate__bounceIn': show }"
+            class="
+              animate__animated
+              cursor-pointer
+              select-none
+              p-4
+              transition
+              transform
+              rounded
+              drop-shadow-sm
+            "
+          >
+            <div class="flex-col flex justify-center items-center">
+              <div class="flex-shrink-0">
+                <a href="#" class="block relative">
+                  <img
+                    alt="profil"
+                    src="https://www.aviationcivile.gov.ma/pdf/logorm.png"
+                    class="mx-auto object-cover rounded-full h-20 w-20"
+                  />
+                </a>
+              </div>
+              <div class="mt-2 text-center flex flex-col">
+                <span class="text-gray-600 dark:text-white text-lg font-medium">
+                  وزارة الأوقاف والشؤون الإسلامية
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            x-data="{ show: false }"
+            @mouseover="show = true"
+            @mouseleave.debounce="show = false"
+            :class="{ 'animate__bounceIn': show }"
+            class="
+              animate__animated
+              cursor-pointer
+              select-none
+              p-4
+              transition
+              transform
+              rounded
+              drop-shadow-sm
+            "
+          >
+            <div class="flex-col flex justify-center items-center">
+              <div class="flex-shrink-0">
+                <a href="#" class="block relative">
+                  <img
+                    alt="profil"
+                    src="https://www.aviationcivile.gov.ma/pdf/logorm.png"
+                    class="mx-auto object-cover rounded-full h-20 w-20"
+                  />
+                </a>
+              </div>
+              <div class="mt-2 text-center flex flex-col">
+                <span class="text-gray-600 dark:text-white text-lg font-medium">
+                  وزارة الأوقاف والشؤون الإسلامية
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            x-data="{ show: false }"
+            @mouseover="show = true"
+            @mouseleave.debounce="show = false"
+            :class="{ 'animate__bounceIn': show }"
+            class="
+              animate__animated
+              cursor-pointer
+              select-none
+              p-4
+              transition
+              transform
+              rounded
+              drop-shadow-sm
+            "
+          >
+            <div class="flex-col flex justify-center items-center">
+              <div class="flex-shrink-0">
+                <a href="#" class="block relative">
+                  <img
+                    alt="profil"
+                    src="https://www.aviationcivile.gov.ma/pdf/logorm.png"
+                    class="mx-auto object-cover rounded-full h-20 w-20"
+                  />
+                </a>
+              </div>
+              <div class="mt-2 text-center flex flex-col">
+                <span class="text-gray-600 dark:text-white text-lg font-medium">
+                  وزارة الأوقاف والشؤون الإسلامية
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            x-data="{ show: false }"
+            @mouseover="show = true"
+            @mouseleave.debounce="show = false"
+            :class="{ 'animate__bounceIn': show }"
+            class="
+              animate__animated
+              cursor-pointer
+              select-none
+              p-4
+              transition
+              transform
+              rounded
+              drop-shadow-sm
+            "
+          >
+            <div class="flex-col flex justify-center items-center">
+              <div class="flex-shrink-0">
+                <a href="#" class="block relative">
+                  <img
+                    alt="profil"
+                    src="https://www.aviationcivile.gov.ma/pdf/logorm.png"
+                    class="mx-auto object-cover rounded-full h-20 w-20"
+                  />
+                </a>
+              </div>
+              <div class="mt-2 text-center flex flex-col">
+                <span class="text-gray-600 dark:text-white text-lg font-medium">
+                  وزارة الأوقاف والشؤون الإسلامية
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Pray times-->
+    <div>
+      <div class="grid grid-cols-3">
+        <!--Pray-->
+        <div></div>
+        <!--Pray-->
+        <div></div>
+        <!--Pray-->
+        <div></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-gray-800">
+      <div
+        class="
+          px-4
+          pt-16
+          mx-auto
+          sm:max-w-xl
+          md:max-w-full
+          lg:max-w-screen-xl
+          md:px-24
+          lg:px-8
+        "
+      >
+        <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="sm:col-span-2">
+            <a
+              href="/"
+              aria-label="Go home"
+              title="Company"
+              class="inline-flex items-center"
+            >
+              <svg
+                class="w-8 text-blue-50"
+                viewBox="0 0 24 24"
+                stroke-linejoin="round"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-miterlimit="10"
+                stroke="currentColor"
+                fill="none"
+              >
+                <rect x="3" y="1" width="7" height="12"></rect>
+                <rect x="3" y="17" width="7" height="6"></rect>
+                <rect x="14" y="1" width="7" height="6"></rect>
+                <rect x="14" y="11" width="7" height="12"></rect>
+              </svg>
+              <span
+                class="
+                  ml-2
+                  text-xl
+                  font-bold
+                  tracking-wide
+                  text-blue-50
+                  uppercase
+                "
+                >LOGO</span
+              >
+            </a>
+            <div class="mt-6 lg:max-w-sm">
+              <p class="text-sm text-blue-50">
+                لغزو احتار كل أسر, بـ هُزم النمسا الخاسر بعد, من مسرح ألمانيا
+                البشريةً فعل. والجنوب ارتكبها وبالتحديد، فعل. الا مع قِبل أمدها
+                جديداً. بوابة الضغوط أن ولم. قد لمّ مكثّفة دنكيرك. جهة وبعض شعار
+                ان.
+              </p>
+              <p class="mt-4 text-sm text-blue-50">
+                بحق نهاية تكاليف بريطانيا، ما, إلى أن النزاع الألماني. حرب غزوه
+                أصقاع القوقازية تم, حتى كل ألماني بقيادة والكوري, بلا أجزاء
+                مواقعها بل. عدد عقبت بالسيطرة عل. دول معقل لهذه أسابيع. أن وقد
+                وباءت المجتمع, هجوم وبغطاء ذلك هو. تعديل فهرست."
+              </p>
+            </div>
+          </div>
+          <div class="space-y-2 text-sm">
+            <p class="text-base font-bold tracking-wide text-blue-50">
+              جهات الاتصال
+            </p>
+            <div class="flex">
+              <p class="mr-1 text-blue-50">الهاتف:</p>
+              <a
+                href="tel:850-123-5021"
+                aria-label="Our phone"
+                title="Our phone"
+                class="
+                  transition-colors
+                  duration-300
+                  text-blue-50
+                  hover:text-deep-purple-800
+                "
+                >850-123-5021</a
+              >
+            </div>
+            <div class="flex">
+              <p class="mr-1 text-blue-50">بريد الالكتروني:</p>
+              <a
+                href="mailto:info@lorem.mail"
+                aria-label="Our email"
+                title="Our email"
+                class="
+                  transition-colors
+                  duration-300
+                  text-blue-50
+                  hover:text-deep-purple-800
+                "
+                >info@lorem.mail</a
+              >
+            </div>
+            <div class="flex">
+              <p class="mr-1 text-blue-50">عنوان:</p>
+              <a
+                href="https://www.google.com/maps"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Our address"
+                title="Our address"
+                class="
+                  transition-colors
+                  duration-300
+                  text-blue-50
+                  hover:text-deep-purple-800
+                "
+              >
+                ودول وجهان فقد, في الوراء وبالتحديد
+              </a>
+            </div>
+          </div>
+          <div>
+            <span class="text-base font-bold tracking-wide text-blue-50"
+              >وسائل التواصل الاجتماعي</span
+            >
+            <div class="flex items-center mt-2 gap-x-3">
+              <a
+                href="/"
+                class="
+                  text-blue-50
+                  transition-colors
+                  duration-300
+                  hover:text-blue-50
+                "
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                  <path
+                    d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="/"
+                class="
+                  text-blue-50
+                  transition-colors
+                  duration-300
+                  hover:text-blue-50
+                "
+              >
+                <svg viewBox="0 0 30 30" fill="currentColor" class="h-6">
+                  <circle cx="15" cy="15" r="4"></circle>
+                  <path
+                    d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="/"
+                class="
+                  text-blue-50
+                  transition-colors
+                  duration-300
+                  hover:text-blue-50
+                "
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                  <path
+                    d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <p class="mt-4 text-sm text-blue-50">
+              تُصب البرية والحلفاء. مشارف واشتدّت شبح كل, بتخصيص بل مما. الحرة
+              بقيادة تم وصل.
+            </p>
+          </div>
+        </div>
+        <div
+          class="
+            flex flex-col-reverse
+            justify-between
+            pt-5
+            pb-10
+            border-t
+            lg:flex-row
+          "
+        >
+          <p class="text-sm text-blue-50">
+            © حقوق الطبع والنشر 2020 Lorem Inc. جميع الحقوق محفوظة.
+          </p>
+          <ul
+            class="
+              flex flex-col
+              mb-3
+              gap-x-2
+              space-y-2
+              lg:mb-0
+              sm:space-y-0 sm:space-x-5 sm:flex-row
+            "
+          >
+            <li>
+              <a
+                href="/"
+                class="
+                  text-sm text-blue-50
+                  transition-colors
+                  duration-300
+                  hover:text-blue-50
+                "
+                >التعليمات</a
+              >
+            </li>
+            <li>
+              <a
+                href="/"
+                class="
+                  text-sm text-blue-50
+                  transition-colors
+                  duration-300
+                  hover:text-blue-50
+                "
+                >سياسة الخصوصية</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="./ta-gallery.min.js"></script>
+    <script src="./ta-pagination.min.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
